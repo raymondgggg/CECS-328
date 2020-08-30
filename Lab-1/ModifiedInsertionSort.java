@@ -5,12 +5,8 @@
 import java.util.Arrays;
 public class ModifiedInsertionSort {
     public static void main(String[] args) {
-
-
      String[] sortedList = insertionSort(args);
-     System.out.println(Arrays.toString(sortedList));
-    
-
+     System.out.println("Sorted Array: " + Arrays.toString(sortedList));
     }
 
     public static String[] insertionSort(String[] args){
@@ -26,7 +22,7 @@ public class ModifiedInsertionSort {
                 args[i + 1] = args[i];
                 i = i -1;
                 numberOfComparisons++;
-                if ((i == 0 && args[i].substring(0, args[i].length() - 1).compareTo(stringj) <= 0)){
+                if ((i >= 0 && args[i].substring(0, args[i].length() - 1).compareTo(stringj) <= 0)){
                     numberOfComparisons++;
                 }
             }
