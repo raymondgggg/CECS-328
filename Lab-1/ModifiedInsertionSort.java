@@ -32,5 +32,4 @@ public class ModifiedInsertionSort {
         System.out.println();
         return args;
     }
-
 }
