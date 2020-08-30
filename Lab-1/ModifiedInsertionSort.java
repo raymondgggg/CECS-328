@@ -29,6 +29,7 @@ public class ModifiedInsertionSort {
             System.out.println(key + " "  + numberOfComparisons);
             args[i+1] = key;
         }
+        System.out.println();
         return args;
     }
 
