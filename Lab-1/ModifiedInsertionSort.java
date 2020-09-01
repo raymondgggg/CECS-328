@@ -5,7 +5,6 @@
 public class ModifiedInsertionSort {
     public static void main(String[] args) {
         insertionSort(args);
-   
     }
 
     public static void insertionSort(String[] args){
@@ -40,10 +39,8 @@ public class ModifiedInsertionSort {
             System.out.print(args[i] + " ");
         }
 
-        System.out.println();
-
         for (int i = 1; i < originalArgs.length; i ++){ // printing the number of comparisons in the order of original input
-            System.out.println(originalArgs[i] + " " + comparisons[i]);
+            System.out.print("\n" + originalArgs[i] + " " + comparisons[i]);
         }
     }
 }
