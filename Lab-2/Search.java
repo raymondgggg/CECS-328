@@ -35,11 +35,11 @@ public class Search{
     }
 
     public static boolean sameChars(String listString, String usrString) { // method to compare if strings are equal
-        char[] txtString = listString.toLowerCase().toCharArray();
+        char[] txtString = listString.toLowerCase().toCharArray(); //create char arrays of the two strings
         char[] inputtedString = usrString.toLowerCase().toCharArray();
-        Arrays.sort(txtString);
+        Arrays.sort(txtString); // sort char arrays 
         Arrays.sort(inputtedString);
-        return Arrays.equals(txtString, inputtedString);
+        return Arrays.equals(txtString, inputtedString); // check if the chars in the arrays are equal
     }
 
     public static int linearSearch(ArrayList<String> strings, String string){ //searching for the string entered from command line through input.txt file
