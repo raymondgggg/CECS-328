@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Search {
+public class Search{
     public static void main(String[] args) {
         ArrayList<String> txtInput = new ArrayList<String>();
         readFile(txtInput, args);
@@ -34,7 +34,7 @@ public class Search {
         }
     }
 
-    public static boolean sameChars(String listString, String usrString) {
+    public static boolean sameChars(String listString, String usrString) { // method to compare if strings are equal
         char[] txtString = listString.toLowerCase().toCharArray();
         char[] inputtedString = usrString.toLowerCase().toCharArray();
         Arrays.sort(txtString);
@@ -42,7 +42,7 @@ public class Search {
         return Arrays.equals(txtString, inputtedString);
     }
 
-    public static int linearSearch(ArrayList<String> strings, String string){
+    public static int linearSearch(ArrayList<String> strings, String string){ //searching for the string entered from command line through input.txt file
        int n = strings.size();
        for(int i = 0; i < n; i++){
            if (sameChars(strings.get(i), string)){
