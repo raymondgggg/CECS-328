@@ -1,23 +1,24 @@
-
 // Raymond Guevara Lozano
 // Scott Sakurai
 // Brent Nishioka
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Search {
     public static void main(String[] args) {
         ArrayList<String> txtInput = new ArrayList<String>();
         readFile(txtInput, args);
-        insertionSort(txtInput);
-        for (int i = 0; i < txtInput.size(); i++){
-            System.out.println(txtInput.get(i));
+        int n = linearSearch(txtInput, args[1]);
+        if (n != -1){
+            System.out.println("Found search string: " + txtInput.get(n-1));
+            System.out.println("Line Number: " + n);
         }
-        int n = binarySearch(txtInput, args[1]);
-        System.out.println(n);
-
+        else{
+            System.out.println("String not found");
+        }
     }
 
     public static void readFile(ArrayList<String> strings, String[] args){ //method to read file and append all the strings to ArrayList
@@ -33,36 +34,21 @@ public class Search {
         }
     }
 
-    public static void insertionSort(ArrayList<String> strings){
-        for (int j = 1; j < strings.size(); j++){ //begininng loop to get 2nd element of array
-            String key = strings.get(j);
-            int i = j - 1;
-
-            while (i >= 0 && ((strings.get(i).compareToIgnoreCase(key) > 0))){ //comparison of previous element(s)
-                strings.set(i+1, strings.get(i));
-                i = i -1;
-            }
-            strings.set(i+1, key);
-        }
+    public static boolean sameChars(String listString, String usrString) {
+        char[] txtString = listString.toLowerCase().toCharArray();
+        char[] inputtedString = usrString.toLowerCase().toCharArray();
+        Arrays.sort(txtString);
+        Arrays.sort(inputtedString);
+        return Arrays.equals(txtString, inputtedString);
     }
 
-    public static int binarySearch(ArrayList<String> strings, String string){
-        int l = 0, r = strings.size() - 1;
-        while (l<= r){
-            int m = l + (r-l)/2;
-            int res = string.compareToIgnoreCase(strings.get(m));
-
-            if (res == 0){
-                return m;
-            }
-
-            if (res > 0){
-                l = m + 1;
-            }
-            else{
-                r = m - 1;
-            }
-        }
-        return -1;
+    public static int linearSearch(ArrayList<String> strings, String string){
+       int n = strings.size();
+       for(int i = 0; i < n; i++){
+           if (sameChars(strings.get(i), string)){
+               return i + 1;
+           }
+       }
+       return -1;
     }
 }
