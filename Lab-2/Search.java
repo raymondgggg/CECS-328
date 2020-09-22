@@ -46,9 +46,9 @@ public class Search{
        int n = strings.size();
        for(int i = 0; i < n; i++){
            if (sameChars(strings.get(i), string)){
-               return i + 1;
+               return i + 1; //return the position of word in .txt file
            }
        }
-       return -1;
+       return -1; //return -1 if word is not found
     }
 }
