@@ -29,6 +29,7 @@ public class Search{
                 String line = input.nextLine();
                 strings.add(line);
             }
+            input.close();
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }
