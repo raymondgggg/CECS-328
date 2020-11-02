@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/raymond/programming/java/CECS-328/Lab-3-xtraCredit/**/*.jar"
+    ]
+}
