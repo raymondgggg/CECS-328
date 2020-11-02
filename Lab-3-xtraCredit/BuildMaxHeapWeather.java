@@ -143,5 +143,4 @@ public class BuildMaxHeapWeather {
         System.out.println("\n");
         System.out.println("Height: " + getHeight(A.length));
     }
-
 }
